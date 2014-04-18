@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <title>WebRTC功能演示：使用WebSocket文字聊天</title>
+
+        <!-- 加载easyrtc -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+
+    </head>
+    <body>
+    	<h1>使用WebSocket文字聊天</h1>
+
+        <h2>使用说明</h2>
+
+        <p>
+            使用chrome/firefox/safiri/ie 11浏览器开2个窗口打开该网页，将其中一个网页的客户ID写入到另一个网页的发送给谁文本框中，然后在消息文本框写入想发送的消息，点击发送按钮。那么在另外的网页的日志里能看到发送的信息。
+        </p>
+        <p>
+            或者两个人分别打开这个网页，并告知对方客户ID，也可以演示使用。
+        </p>
+
+        <hr>
+
+        <h2>演示</h2>
+
+        <div>客户ID：<span id='cid'></span></div>
+
+        <div>
+            <span>消息：</span><input id='message'></input>
+        </div>
+
+        <div>
+            <span>发送给谁：</span><input id='otherCid'></input>
+        </div>
+
+        <button onclick='sendMessage();'>发送</button>
+
+        <script type="text/javascript">
+            easyrtc.setPeerListener(function(who,messageType,content){
+                console.log('peer listener, who: '+who+', type: '+messageType+', content: '+content);
+            });
+            easyrtc.setRoomOccupantListener(function(roomName, occupants, isPrimary){
+                console.log('room occupant, roomName: '+roomName);
+            });
+            easyrtc.connect("easyrtc.instantMessaging", function(cid){
+                console.log('connect success: '+ cid);
+                document.getElementById('cid').innerHTML=cid;
+            }, function(){
+                console.log('connect failure!');
+            });
+
+            function sendMessage(){
+                var messageEl=document.getElementById('message');
+                var otherCidEl=document.getElementById('otherCid');
+
+                easyrtc.sendDataWS(otherCidEl.value, "message",  messageEl.value);
+                console.log('message send ok.');
+
+                messageEl.value='';
+                otherCidEl.value='';
+            }
+        </script>
+    </body>
+</html>
