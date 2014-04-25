@@ -1,0 +1,25 @@
+{
+  "name": "RtcDemos",
+  "version": "0.0.0",
+  "homepage": "https://github.com/MarshalW/RtcDemos",
+  "authors": [
+    "Marshal <marshal.wu@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies":{
+    "jquery":"",
+    "requirejs":"",
+    "canjs":""
+  }
+}

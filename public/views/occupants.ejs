@@ -1,0 +1,12 @@
+<% can.each(this, function(occupant, index) { %>
+<div id='<%= occupant.easyrtcid%>'>
+<span><%= occupant.easyrtcid%></span>
+<button class='callButton'>呼叫</button>
+<div id='<%= occupant.easyrtcid+'_chat'%>'></div>
+<p>
+<hr>
+<p>
+</div>
+<% }); %>
+
+<br>
