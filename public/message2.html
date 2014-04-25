@@ -3,13 +3,25 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <title>WebRTC功能演示：使用WebRTC Data Channel文字聊天</title>
 
-        <!-- 加载easyrtc -->
-        <script src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+        <script type="text/javascript" src="bower_components/requirejs/require.js"
+            data-main="javascripts/message2/app"></script>
 
     </head>
     <body>
     	<h1>使用WebRTC Data Channel文字聊天</h1>
+
+    	<div>我的ID：<span id='myCid'></span></div>
+
+    	<br>
+
+    	<div>其他客户：</div>
+
+		<br>    	
+    	
+    	<div id='otherCids'>
+
+    	</div>
+
     	
     </body>
 </html>
