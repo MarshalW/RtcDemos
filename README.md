@@ -13,3 +13,4 @@ WebRTC demos using EasyRTC.
 # Version description
 
 * m1, send message from socket.io, [http://localhost:3000/message.html](http://localhost:3000/message.html) 
+* m2, send message from data channel, [http://localhost:3000/message2.html](http://localhost:3000/message2.html) 
