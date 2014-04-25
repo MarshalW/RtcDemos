@@ -6,7 +6,7 @@ WebRTC demos using EasyRTC.
 
 # How to use the demos
 
-* Run it
+* Run it, it's a standard nodejs/expressjs project
 * Open browser to visit  [http://localhost:3000/rtc_demos.html](http://localhost:3000/rtc_demos.html)
  
 
