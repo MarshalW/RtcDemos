@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <title>WebRTC功能演示：简单的视频聊天</title>
+
+        <script type="text/javascript" src="bower_components/requirejs/require.js"
+            data-main="javascripts/video/app"></script>
+
+    </head>
+    <body>
+    	<h1>简单的视频聊天</h1>
+
+        <div>
+            <button id='callButton'>呼叫</button>
+        </div>
+
+    	<div id="videos">
+            <video autoplay="autoplay" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" style='max-width:300px;'
+            ></video>
+            
+            <div style="position:relative;float:left;">
+                <video autoplay="autoplay" id="callerVideo" style='max-width:300px;'></video>
+            </div>
+        </div>
+
+    	
+    </body>
+</html>
